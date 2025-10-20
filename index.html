@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Manager & Optimization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Debt Manager & Optimization System</h1>
+
+        <div class="form-container">
+            <h2>Add a New Debt</h2>
+            <form id="debt-form">
+                <div class="form-group">
+                    <label for="debt-name">Debt Name:</label>
+                    <input type="text" id="debt-name" placeholder="e.g., Credit Card" required>
+                </div>
+                <div class="form-group">
+                    <label for="principal">Outstanding Principal (₹):</label>
+                    <input type="number" id="principal" placeholder="3,00,000" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Interest Rate (% p.a.):</label>
+                    <input type="number" id="interest-rate" step="0.01" placeholder="15" required>
+                </div>
+                <div class="form-group">
+                    <label for="min-payment">Minimum Monthly Payment (₹):</label>
+                    <input type="number" id="min-payment" placeholder="5,000" required>
+                </div>
+                <button type="submit">Add Debt</button>
+            </form>
+        </div>
+
+        <div class="debts-container">
+            <h2>Your Debts</h2>
+            <table id="debts-table">
+                <thead>
+                    <tr>
+                        <th>Debt Name</th>
+                        <th>Principal (₹)</th>
+                        <th>Interest Rate (%)</th>
+                        <th>Min. Payment (₹)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Debt rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="calculation-container">
+            <h2>Repayment Strategy</h2>
+            <div class="form-group">
+                <label for="extra-payment">Extra Monthly Payment (₹):</label>
+                <input type="number" id="extra-payment" placeholder="2,000" value="0">
+            </div>
+            <button id="calculate-btn">Calculate Repayment Plans</button>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <h2>Repayment Schedules</h2>
+            <div class="strategy-container">
+                <h3>Debt Avalanche Method</h3>
+                <div id="avalanche-summary"></div>
+                <table id="avalanche-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Starting Balance (₹)</th>
+                            <th>Payment (₹)</th>
+                            <th>Interest Paid (₹)</th>
+                            <th>Principal Paid (₹)</th>
+                            <th>Ending Balance (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="strategy-container">
+                <h3>Debt Snowball Method</h3>
+                <div id="snowball-summary"></div>
+                <table id="snowball-table">
+                    <thead>
+                         <tr>
+                            <th>Month</th>
+                            <th>Starting Balance (₹)</th>
+                            <th>Payment (₹)</th>
+                            <th>Interest Paid (₹)</th>
+                            <th>Principal Paid (₹)</th>
+                            <th>Ending Balance (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
